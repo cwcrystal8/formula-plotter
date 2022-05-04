@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML Documentation</title>
+		<link rel="stylesheet" href="docs.css" />
+	</head>
+	<body>
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Quick Start</a>
+        <a href="html_doc.html">HTML</a>
+        <a href="css_doc.html">CSS</a>
+        <a href="js_doc.html">JS</a>
+    </nav>
+
+		<h1>HTML Documentation</h1>
+
+        <!-- Attributes explanation -->
+        <h2>Attributes</h2>
+
+        <p>
+            The <code> &#8249;formula-plotter&#8250; </code> element has 
+            one attribute called <code>var-name</code> that determines 
+            the variable name in the provided formula. <code>var-name</code>
+            can be any sequence of letters, numbers, symbols, etc. but
+            the provided formula must be valid and able to be evaluated
+            after all instances of <code>var-name</code> have 
+            been replaced with a number.
+        </p>
+
+        <p>
+            For example, the following code would create a formula plotter 
+            object that could only take in formulas using <code>x</code> 
+            as a variable:
+        </p>
+
+        <pre>&#8249;formula-plotter var-name='x'&#8250;
+    ...
+&#8249;/formula-plotter&#8250;</pre>
+
+        <h2>Children</h2>
+
+        <p>
+            Each <code> &#8249;formula-plotter&#8250; </code> element
+            has one child attached to its shadow root with the 
+            following structure:
+        </p>
+
+<pre>&#8249;formula-plotter var-name='x'&#8250;
+    &#8249;div id='inputs' part='inputs'&#8250;
+        &#8249;label&#8250; Formula
+            &#8249;input type='text' id='formula'&#8250;
+        &#8249;/label&#8250;
+        &#8249;label&#8250; X-Min
+            &#8249;input type='number' id='x-min'&#8250;
+        &#8249;/label&#8250;
+        &#8249;label&#8250; X-Max
+            &#8249;input type='number' id='x-max'&#8250;
+        &#8249;/label&#8250;
+    &#8249;/div&#8250;
+
+    &#8249;div id='graph' part='graph'&#8250;&#8249;/div&#8250;
+&#8249;/formula-plotter&#8250;</pre>
+        
+	</body>
+</html>
+

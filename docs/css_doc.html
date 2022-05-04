@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>CSS Documentation</title>
+		<link rel="stylesheet" href="docs.css" />
+	</head>
+	<body>
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Quick Start</a>
+        <a href="html_doc.html">HTML</a>
+        <a href="css_doc.html">CSS</a>
+        <a href="js_doc.html">JS</a>
+    </nav>
+
+		<h1>CSS Documentation</h1>
+
+        <h2>Parts</h2>
+
+        <p>
+            The <code> &#8249;formula-plotter&#8250; </code> element has 
+            two parts called <code>inputs</code> and <code>graph</code>.
+            Users can use these parts to style the input fields and the 
+            graph div, respectively.
+        </p>
+
+        <h3>Examples</h3>
+
+        <p>
+            To change the width of the graph too 500px, you can include 
+            the following CSS in your project:
+        </p>
+
+<pre>
+::part(graph) {
+    width: 500px
+}
+</pre>
+        
+        <p>
+            To change the inputs so that they are vertically aligned, you can include 
+            the following CSS in your project:
+        </p>
+
+<pre>
+::part(inputs) {
+    display: flex;
+    flex-flow: column
+}
+</pre>
+
+	</body>
+</html>
+

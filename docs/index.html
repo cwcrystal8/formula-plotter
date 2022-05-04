@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Formula Plotter Documentation</title>
+		<link rel="stylesheet" href="docs.css" />
+	</head>
+	<body>
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Quick Start</a>
+        <a href="html_doc.html">HTML</a>
+        <a href="css_doc.html">CSS</a>
+        <a href="js_doc.html">JS</a>
+    </nav>
+
+		<h1>Documentation</h1>
+
+        <h2>Quick Start</h2>
+
+        <p>
+            To start using the formula plotter in your code,
+            add the following <code>&lt;script&gt;</code> tag 
+            to the <code>&#8249;head&#8250;</code> of your HTML 
+            file as such:
+        </p>
+
+<pre>&lt;script 
+    src="github.com/cwcrystal8/formula-plotter/main.js" 
+    type="module"
+&gt;
+&lt;/script&gt;</pre>   
+
+        <p>
+            Then, wherever you'd like a formula plotter in your 
+            html, add the <code> &#8249;formula-plotter&#8250; </code>
+            element as such with the <code>var-name </code> attribute 
+            defined as such:
+        </p>
+
+<pre>&lt;formula-plotter var-name='x'&gt;&lt;/formula-plotter&gt;</pre> 
+
+        <p>
+            Your final HTML file should look like this:
+        </p>
+
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        ...
+        &lt;script 
+        src="github.com/cwcrystal8/formula-plotter/main.js" 
+        type="module"&gt;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+        &lt;formula-plotter var-name='x'&gt;&lt;/formula-plotter&gt;
+        ...
+    &lt;/body&gt;
+&lt;/html&gt;</pre> 
+
+        <h2>Additional Info</h2>
+        <p>
+            The following pages provide more detail on 
+            the formula-plotter. You can also access them 
+            by clicking the links in the nav bar.
+        </p>
+
+        <ul>
+            <li>
+                <a href="html_doc.html">HTML Documentation</a>
+            </li>
+            <li>
+                <a href="css_doc.html">CSS Documentation</a>
+            </li>
+            <li>
+                <a href="js_doc.html">JS Documentation</a>
+            </li>
+        </ul>
+		<!-- Writeup here -->
+	</body>
+</html>
+

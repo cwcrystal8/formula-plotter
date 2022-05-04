@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS Documentation</title>
+		<link rel="stylesheet" href="docs.css" />
+	</head>
+	<body>
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Quick Start</a>
+        <a href="html_doc.html">HTML</a>
+        <a href="css_doc.html">CSS</a>
+        <a href="js_doc.html">JS</a>
+    </nav>
+
+		<h1>JS Documentation</h1>
+
+        <h2>JS Quick Start</h2>
+
+        <p>
+            In order to access the <code>formula-plotter</code> element in JavaScript,
+            you can run the following code to get its DOM object:
+        </p>
+
+<pre>let plotter = document.querySelector("formula-plotter");</pre>
+
+        <!-- Accessors -->
+        <h2>Accessors</h2>
+
+        <p>
+            The following variables are accessible in JavaScript:
+        </p>
+
+        <ul>
+            <li>
+                <code>varName</code> (str): 
+                the value of the element's <code>var-name</code> attribute.
+                This reflected attribute-property can be changed in JS as such:
+
+<pre>plotter.varName = 'y';</pre>
+            </li>
+            <li>
+                <code>formula</code> (str): the current formula being plotted. 
+                This property can be changed in JS as such:
+<pre>plotter.formula = 'y ^ 2';</pre>
+            </li>
+            <li>
+                <code>xMin</code> (number): the first value to be plugged into the formula
+                and plotted. This property can be changed in JS as such:
+<pre>plotter.xMin = -5;</pre>
+            </li>
+            <li>
+                <code>xMax</code> (number): the last value to be plugged into the formula
+                and plotted. This property can be changed in JS as such:
+<pre>plotter.xMax = -5;</pre>
+            </li>
+            <li>
+                <code>step</code> (number): the step size taken between each 
+                datapoint. For example, a step size of 1 would results 
+                in datapoints <code>(xMin, f(xMin))</code>, <code>(xMin + 1, f(xMin + 1))</code>,
+                and so on. This property can be changed in JS as such:
+<pre>plotter.step = 0.5;</pre>
+            </li>
+        </ul>
+
+        <!-- Methods -->
+        <h2>Methods</h2>
+
+        <p>
+            The <code>formula-plotter</code> has one method: <code>setNumDatapoints</code>.
+            <code>setNumDatapoints(n)</code> takes in an integer, <code>n</code>, and changes 
+            <code>plotter.step</code> so that there are <code>n</code> datapoints generated 
+            between <code>plotter.xMin</code> and <code>plotter.xMax</code>
+        </p>
+
+        <!-- Events -->
+
+        <h2>Events</h2>
+        <p>
+            Whenever the formula, x-min, or x-max values are changed, either by the user in 
+            the UI or by the developer in JS, the plot/graph will update to reflect the 
+            new parameters.
+        </p>
+
+        <p>
+            There are no additional events of note.
+        </p>
+
+        
+	</body>
+</html>
+
