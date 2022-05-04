@@ -4,6 +4,9 @@
 		<meta charset="UTF-8" />
 		<title>Formula Plotter</title>
 		<link rel="stylesheet" href="docs/docs.css" />
+        <link rel="stylesheet" href="demo.css" />
+        <script src="src/main.js" type="module"></script>
+        <script src="demo.js" type="module"></script>
 	</head>
 	<body>
         
@@ -17,7 +20,125 @@
 
     <h1>Formula Plotter</h1>
 
-    
+    <h2>Introduction</h2>
+    <p>
+        This web component creates an interface for the user to enter 
+        in a single-variable formula and automatically plot that 
+        formula over a customizable domain.
+    </p>
+
+    <h2>Demos</h2>
+
+    <h3>Simple Graph</h3>
+
+    <section class="demo">
+        <p>
+            Here is a simple example where the variable is <code>x</code>
+            and the formula is <code>f(x) = x</code>.
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-1' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot = document.querySelector('#demo-1');
+plot.formula = 'x';</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-1" var-name="x"></formula-plotter>
+    </section>
+
+
+    <h3>Complex Formula</h3>
+
+    <section class="demo">
+        <p>
+            Here is a more complicated formula to demonstrate 
+            the many operations supported by the API.
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-2' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot = document.querySelector('#demo-2');
+plot.formula = '0.25x^3 + x^x - (0.2 * x) + 5!/120';</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-2" var-name="x"></formula-plotter>
+    </section>
+
+    <h3>Domain Resizing</h3>
+
+    <section class="demo">
+        <p>
+            Here is an example of resizing beyond the default
+            domain range.
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-3' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot = document.querySelector('#demo-3');
+plot.formula = '0.25x^3';
+plot.xMax = 500;
+plot.xMin = -25;</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-3" var-name="x"></formula-plotter>
+    </section>
+
+    <h3>Step Adjustment</h3>
+    <section class="demo">
+        <p>
+            Here is an example of adjusting the step size 
+            to plot more datapoints for a smoother curve.
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-4' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot = document.querySelector('#demo-4');
+plot.formula = '0.25x^3';
+plot.step = 0.5;</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-4" var-name="x"></formula-plotter>
+    </section>
+
+    <h3>Number of Datapoints Adjustment</h3>
+    <section class="demo">
+        <p>
+            Similar to the previous example, this demo will 
+            set the number of datapoints (instead of the step size)
+            to adjust the smoothness of the plot.
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-5' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot = document.querySelector('#demo-5');
+plot.formula = '0.25x^3';
+plot.setNumDatapoints(50);</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-5" var-name="x"></formula-plotter>
+    </section>
+
+
 	</body>
 </html>
 

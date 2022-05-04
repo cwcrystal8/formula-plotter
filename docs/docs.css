@@ -64,4 +64,10 @@ pre {
     line-height: 1.7em;
     color: rgb(42, 109, 109);
     font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+section {
+    width: 100%;
+    box-sizing: border-box;
 }
