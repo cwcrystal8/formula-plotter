@@ -33,6 +33,21 @@
 &lt;/script&gt;</pre>   
 
         <p>
+           You will also need to set the width of your graph
+           using CSS. You can link a CSS file as a stylesheet 
+           or you can add a style tag such as the following code, 
+           which will maximize the width of the graph and set its 
+           height to 400px;
+        </p>
+
+<pre>&lt;style&gt;
+    ::part(graph) {
+        width: 100%;
+        height: 400px;
+    }
+&lt;/style&gt;</pre>
+
+        <p>
             Then, wherever you'd like a formula plotter in your 
             html, add the <code> &#8249;formula-plotter&#8250; </code>
             element as such with the <code>var-name </code> attribute 
@@ -42,7 +57,7 @@
 <pre>&lt;formula-plotter var-name='x'&gt;&lt;/formula-plotter&gt;</pre> 
 
         <p>
-            Your final HTML file should look like this:
+            Your final HTML file should look something like this:
         </p>
 
 <pre>&lt;!DOCTYPE html&gt;
@@ -53,6 +68,12 @@
     src="github.com/cwcrystal8/formula-plotter/src/main.js" 
     type="module"&gt;
     &lt;/script&gt;
+    &lt;style&gt;
+    ::part(graph) {
+        width: 100%;
+        height: 400px;
+    }
+&lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
     ...

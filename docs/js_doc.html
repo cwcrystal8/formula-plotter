@@ -43,25 +43,21 @@
             </li>
             <li>
                 <code>formula</code> (str): the current formula being plotted. 
-                This property can be changed in JS as such:
-<pre>plotter.formula = 'y ^ 2';</pre>
+
             </li>
             <li>
                 <code>xMin</code> (number): the first value to be plugged into the formula
-                and plotted. This property can be changed in JS as such:
-<pre>plotter.xMin = -5;</pre>
+                and plotted. Default value of 0. 
             </li>
             <li>
                 <code>xMax</code> (number): the last value to be plugged into the formula
-                and plotted. This property can be changed in JS as such:
-<pre>plotter.xMax = -5;</pre>
+                and plotted. Default value of 100. 
             </li>
             <li>
                 <code>step</code> (number): the step size taken between each 
-                datapoint. For example, a step size of 1 would results 
+                datapoint. Default value of 100. For example, a step size of 1 would results 
                 in datapoints <code>(xMin, f(xMin))</code>, <code>(xMin + 1, f(xMin + 1))</code>,
-                and so on. This property can be changed in JS as such:
-<pre>plotter.step = 0.5;</pre>
+                and so on. 
             </li>
         </ul>
 
@@ -69,11 +65,34 @@
         <h2>Methods</h2>
 
         <p>
-            The <code>formula-plotter</code> has one method: <code>setNumDatapoints</code>.
-            <code>setNumDatapoints(n)</code> takes in an integer, <code>n</code>, and changes 
-            <code>plotter.step</code> so that there are <code>n</code> datapoints generated 
-            between <code>plotter.xMin</code> and <code>plotter.xMax</code>
+            The <code>formula-plotter</code> has the following methods: 
         </p>
+
+        <ul>
+            <li>
+                get <code>varName()</code>: returns the variable used in the formula as a string.
+            </li>
+            <li>
+                set <code>varName(v)</code>: sets the variable name to <code>v</code> and reloads the graph.
+            </li>
+            <li>
+                <code>setFormula(f)</code>: sets the formula to <code>f</code> and reloads the graph
+            </li>
+            <li>
+                <code>setXMin(x)</code>: sets the lower bound of the domain to <code>x</code> and reloads the graph
+            </li>
+            <li>
+                <code>setXMax(x)</code>: sets the upper bound of the domain to <code>x</code> and reloads the graph
+            </li>
+            <li>
+                <code>setStep(step)</code>: sets the step size to <code>step</code> and reloads the graph
+            </li>
+            <li>
+                <code>setNumDatapoints(n)</code>: takes in an integer, <code>n</code>, and changes 
+                <code>plotter.step</code> so that there are <code>n</code> datapoints generated 
+                between <code>plotter.xMin</code> and <code>plotter.xMax</code>.
+            </li>
+        </ul>
 
         <!-- Events -->
 
@@ -81,7 +100,8 @@
         <p>
             Whenever the formula, x-min, or x-max values are changed, either by the user in 
             the UI or by the developer in JS, the plot/graph will update to reflect the 
-            new parameters.
+            new parameters. The graph will also update if the <code>step</code> property 
+            is updated in JS.
         </p>
 
         <p>

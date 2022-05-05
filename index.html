@@ -4,9 +4,10 @@
 		<meta charset="UTF-8" />
 		<title>Formula Plotter</title>
 		<link rel="stylesheet" href="docs/docs.css" />
-        <link rel="stylesheet" href="demo.css" />
+        <link rel="stylesheet" href="demo/demo.css" />
+
         <script src="src/main.js" type="module"></script>
-        <script src="demo.js" type="module"></script>
+        <script src="demo/demo.js" type="module"></script>
 	</head>
 	<body>
         
@@ -42,8 +43,19 @@
 <pre>&lt;formula-plotter id='demo-1' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
 
         <h4>Javascript</h4>
-<pre>let plot = document.querySelector('#demo-1');
-plot.formula = 'x';</pre>
+<pre>let plot1 = document.querySelector('#demo-1');
+plot1.setFormula('x');</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
 
         <h4>Output</h4>
 
@@ -64,8 +76,19 @@ plot.formula = 'x';</pre>
 <pre>&lt;formula-plotter id='demo-2' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
 
         <h4>Javascript</h4>
-<pre>let plot = document.querySelector('#demo-2');
-plot.formula = '0.25x^3 + x^x - (0.2 * x) + 5!/120';</pre>
+<pre>let plot2 = document.querySelector('#demo-2');
+plot2.setFormula('0.25 * x ** 3 + x ** (x / 100) - (0.2 * x) + 1');</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
 
         <h4>Output</h4>
 
@@ -85,10 +108,21 @@ plot.formula = '0.25x^3 + x^x - (0.2 * x) + 5!/120';</pre>
 <pre>&lt;formula-plotter id='demo-3' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
 
         <h4>Javascript</h4>
-<pre>let plot = document.querySelector('#demo-3');
-plot.formula = '0.25x^3';
-plot.xMax = 500;
-plot.xMin = -25;</pre>
+<pre>let plot3 = document.querySelector('#demo-3');
+plot3.setFormula('0.25 * x ** 3');
+plot3.setXMax(500);
+plot3.setXMin(-20);</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
 
         <h4>Output</h4>
 
@@ -107,9 +141,20 @@ plot.xMin = -25;</pre>
 <pre>&lt;formula-plotter id='demo-4' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
 
         <h4>Javascript</h4>
-<pre>let plot = document.querySelector('#demo-4');
-plot.formula = '0.25x^3';
-plot.step = 0.5;</pre>
+<pre>let plot4 = document.querySelector('#demo-4');
+plot4.setFormula('0.25 * x ** 3');
+plot4.setStep(0.5);</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
 
         <h4>Output</h4>
 
@@ -129,9 +174,20 @@ plot.step = 0.5;</pre>
 <pre>&lt;formula-plotter id='demo-5' var-name='x'&gt;&lt;/formula-plotter&gt;</pre>
 
         <h4>Javascript</h4>
-<pre>let plot = document.querySelector('#demo-5');
-plot.formula = '0.25x^3';
-plot.setNumDatapoints(50);</pre>
+<pre>let plot5 = document.querySelector('#demo-5');
+plot5.setFormula('0.25 * x ** 3');
+plot5.setNumDatapoints(50);</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
 
         <h4>Output</h4>
 

@@ -1,18 +1,18 @@
 let plot1 = document.querySelector('#demo-1');
-plot1.formula = 'x';
+plot1.setFormula('x');
 
 let plot2 = document.querySelector('#demo-2');
-plot2.formula = '0.25x^3 + x^x - (0.2 * x) + 5!/120';
+plot2.setFormula('0.25 * x ** 3 + x ** (x / 100) - (0.2 * x) + 1');
 
 let plot3 = document.querySelector('#demo-3');
-plot3.formula = '0.25x^3';
-plot3.xMax = 500;
-plot3.xMin = -25;
+plot3.setFormula('0.25 * x ** 3');
+plot3.setXMax(500);
+plot3.setXMin(-20);
 
 let plot4 = document.querySelector('#demo-4');
-plot4.formula = '0.25x^3';
-plot4.step = 0.5;
+plot4.setFormula('0.25 * x ** 3');
+plot4.setStep(0.5);
 
 let plot5 = document.querySelector('#demo-5');
-plot5.formula = '0.25x^3';
+plot5.setFormula('0.25 * x ** 3');
 plot5.setNumDatapoints(50);

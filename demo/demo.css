@@ -1,0 +1,12 @@
+h3 {
+    border-bottom: 3px solid lightseagreen;
+}
+
+::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}
