@@ -1,5 +1,5 @@
 import * as echarts from "https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.esm.min.js";
-import jsep from "./jsep/src/index.js";
+import jsep from "https://crystalwang.me/formula-plotter/src/jsep/src/index.js";
 
 class FormulaPlotter extends HTMLElement {
     #varName = 'x';
