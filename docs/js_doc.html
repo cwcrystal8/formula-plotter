@@ -98,15 +98,28 @@
 
         <h2>Events</h2>
         <p>
-            Whenever the formula, x-min, or x-max values are changed, either by the user in 
-            the UI or by the developer in JS, the plot/graph will update to reflect the 
-            new parameters. The graph will also update if the <code>step</code> property 
-            is updated in JS.
+            The formula plotter fires an event with the name <code>plotted</code> 
+            whenever it is done plotting the graph and the event object returned 
+            contains the following properties:
         </p>
 
-        <p>
-            There are no additional events of note.
-        </p>
+        <ul>
+            <li>
+                <code>formula</code> (str): the formula used to plot the graph
+            </li>
+            <li>
+                <code>xMin</code> (number): the lower bound of the domain
+            </li>
+            <li>
+                <code>xMax</code> (number): the upper bound of the domain
+            </li>
+            <li>
+                <code>xValues</code> (array): the x-coordinates of the plotted datapoints
+            </li>
+            <li>
+                <code>yValues</code> (array): the y-coordinates of the plotted datapoints
+            </li>
+        </ul>
 
         
 	</body>

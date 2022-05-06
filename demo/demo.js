@@ -16,3 +16,13 @@ plot4.setStep(0.5);
 let plot5 = document.querySelector('#demo-5');
 plot5.setFormula('0.25 * x ** 3');
 plot5.setNumDatapoints(50);
+
+let plot6 = document.querySelector('#demo-6');
+plot6.addEventListener("plotted", 
+    (e) => {
+        let div = document.querySelector("#demo-6-div");
+        div.textContent = 'Current formula: ' + e.detail.formula;
+    }
+);
+plot6.setFormula('0.25 * x ** 3');
+plot6.setNumDatapoints(50);

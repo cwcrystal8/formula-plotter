@@ -194,6 +194,47 @@ plot5.setNumDatapoints(50);</pre>
         <formula-plotter id="demo-5" var-name="x"></formula-plotter>
     </section>
 
+    <h3>Listening to <code>plotted</code> Event</h3>
+    <section class="demo">
+        <p>
+            This example shows how to use the <code>plotted</code>
+            event fired by the formula plotter
+        </p>
+
+        <h4>HTML</h4>
+
+<pre>&lt;formula-plotter id='demo-6' var-name='x'&gt;&lt;/formula-plotter&gt;
+&lt;div id='demo-6-div'&gt;Current formula: &lt;/div&gt;
+</pre>
+
+        <h4>Javascript</h4>
+<pre>let plot6 = document.querySelector('#demo-6');
+plot6.addEventListener("plotted", 
+    (e) => {
+        let div = document.querySelector("#demo-6-div");
+        div.textContent = 'Current formula: ' + e.detail.formula;
+    }
+);
+plot6.setFormula('0.25 * x ** 3');
+plot6.setNumDatapoints(50);</pre>
+
+        <h4>CSS</h4>
+
+<pre>::part(graph) {
+    width: 100%;
+    height:400px;
+}
+
+::part(inputs) {
+    display: flex;
+}</pre>
+
+        <h4>Output</h4>
+
+        <formula-plotter id="demo-6" var-name="x"></formula-plotter>
+        <div id='demo-6-div'>Current formula: </div>
+    </section>
+
 
 	</body>
 </html>

@@ -25,21 +25,21 @@ class FormulaPlotter extends HTMLElement {
 		`;
         this.formulaInput = this.shadowRoot.querySelector("#formula");
         this.formula = this.formulaInput.value;
-        this.formulaInput.addEventListener("input", (e) => {
+        this.formulaInput.addEventListener("change", (e) => {
             this.formula = this.formulaInput.value;
             this.#render();
         });
 
         this.xMinInput = this.shadowRoot.querySelector("#x-min");
         this.xMin = this.xMinInput.value;
-        this.xMinInput.addEventListener("input", (e) => {
+        this.xMinInput.addEventListener("change", (e) => {
             this.xMin = this.xMinInput.value;
             this.#render();
         });
 
         this.xMaxInput = this.shadowRoot.querySelector("#x-max");
         this.xMax = this.xMaxInput.value;
-        this.xMaxInput.addEventListener("input", (e) => {
+        this.xMaxInput.addEventListener("change", (e) => {
             this.xMax = this.xMaxInput.value;
             this.#render();
         });
@@ -65,11 +65,21 @@ class FormulaPlotter extends HTMLElement {
         if (this.formula) {
             let data = this.#getData();
 
-            console.log(data);
             let xValues = data[0];
             let yValues = data[1];
 
             this.#graph(xValues, yValues);
+
+            let evt = new CustomEvent("plotted", {
+                detail: {
+                    formula: this.formula,
+                    xMin: parseFloat(this.xMin || 0),
+                    xMax: parseFloat(this.xMax || 100),
+                    xValues: xValues,
+                    yValues: yValues
+                }
+            });
+            this.dispatchEvent(evt);
         }
     }
 
